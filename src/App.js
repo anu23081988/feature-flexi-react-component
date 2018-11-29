@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { flexiConfig } from './constants/flexi-form-constants';
+import Flexi from './utilities/FlexiForm/components/flexi-form-component';
 
 class App extends Component {
+  onSubmit = (model) =>{
+      alert(JSON.stringify(model));
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Flexi
+         title="Flexi Form Component"
+         config ={flexiConfig}
+         onSubmit = {(flexiConfig) => {this.onSubmit(flexiConfig)}}
+        />
       </div>
     );
   }
