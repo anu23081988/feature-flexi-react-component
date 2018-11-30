@@ -4,7 +4,6 @@ import TextField from '../../TextField/text-field-component.jsx';
 import Dropdown from '../../Dropdown/dropdown-component';
 
 export default class Flexi extends React.Component {
-    
     constructor (props) {
         super(props);
         this.state = {
@@ -12,8 +11,6 @@ export default class Flexi extends React.Component {
             states:''
         }
     }
-
-    validateControlForMandatory
     onSubmit = (e) =>{
         e.preventDefault();
         if (this.props.onSubmit)
@@ -33,22 +30,14 @@ export default class Flexi extends React.Component {
 
             if(type.toLowerCase() === "textfield"){
                 return (
-                    <TextField 
-                        key = {"l" + name}
-                        type = {type}
-                        label={label} 
-                        name={name} 
-                        onChange = {(e) => {this.onChange(e)}}/>
+                    /* Textbox Component */
+                    <TextField type = "text" label={label} name={name} onChange = {(e) => {this.onChange(e)}}/>
                 )  
             }
             if(type.toLowerCase() === "dropdown"){
                 return (
-                    <Dropdown 
-                        key = {"d" + name}
-                        label={label} 
-                        name={name} 
-                        options = {m.values}
-                        onChange = {(e) => {this.onChange(e)}}/>
+                     /* Dropdown Component */
+                    <Dropdown label={label} name={name} options = {m.values} onChange = {(e) => {this.onChange(e)}}/>
                 )  
             }
             return <div>No UI to render</div>;
@@ -58,14 +47,13 @@ export default class Flexi extends React.Component {
     }
     render () {
         const title = this.props.title || 'Flexi Form Component';
+        const class_to_apply = this.props.className ? this.props.className:'';
         return (
-            <div className="container">
-                <h3>{title}</h3>
-                <form className="flexi-form" onSubmit = {(e)=>{this.onSubmit(e)}}>
+            <div className={"container " +  class_to_apply} key="container">
+                <div className="form-header" key="header">{title}</div>
+                <form className="flexi-form" onSubmit = {(e)=>{this.onSubmit(e)}} key="form">
                     {this.renderForm()}
-                    <div className = "form-group">
-                        <button type = "submit">submit</button>
-                    </div>
+                    <button type = "submit" key="btn">submit</button>
                 </form>
             </div>
         )

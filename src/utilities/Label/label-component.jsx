@@ -3,12 +3,11 @@ import './label.css';
 
 export default class Label extends React.Component {
     render () {
-        const key   = this.props.key;
         const name  = this.props.name;
         const label = this.props.label;
-
+        const key   = "l" + name;
         return(
-            <label key = {key} htmlFor  = {name}> {label} </label>
+            <label key = {key} htmlFor = {name}>{label}</label>
         )
     }
 }

@@ -7,22 +7,23 @@ export default class TextField extends React.Component {
         this.props.onChange(e);
     }
     render () {
-        const key   = this.props.key;
         const type  = this.props.type;
         const name  = this.props.name;
         const label = this.props.label;
+        const key   = "t" + name;
 
         return(
             <div key = {name}>
-                        <Label key = {"l" + name} label = {label}/>
-                        <input type={type}
-                            key = {key}
-                            name = {name}
-                            placeholder = {label} 
-                            ref = {(key)=> {this[key]=key}}
-                            onChange = {(e)=>{this.onChange(e)}}
-                        />
-                    </div>
+                <Label name = {name} label = {label}/>
+                
+                <input type={type}
+                        key = {key}
+                        name = {name}
+                        placeholder = {label} 
+                        ref = {(key)=> {this[key]=key}}
+                        onChange = {(e)=>{this.onChange(e)}}
+                />
+            </div>
         )
     }
 }

@@ -9,13 +9,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Flexi
-         title="Flexi Form Component"
-         config ={flexiConfig}
-         onSubmit = {(flexiConfig) => {this.onSubmit(flexiConfig)}}
-        />
-      </div>
+      <Flexi title="Flexi Form Component" config ={flexiConfig} onSubmit = {(flexiConfig) => {this.onSubmit(flexiConfig)}}/>
     );
   }
 }
