@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import '../style/flexi-form-style.css';
 import TextField from '../../TextField/text-field-component.jsx';
 import Dropdown from '../../Dropdown/dropdown-component';
@@ -8,9 +7,13 @@ export default class Flexi extends React.Component {
     
     constructor (props) {
         super(props);
-        this.state = {}
+        this.state = {
+            personname:'',
+            states:''
+        }
     }
 
+    validateControlForMandatory
     onSubmit = (e) =>{
         e.preventDefault();
         if (this.props.onSubmit)
