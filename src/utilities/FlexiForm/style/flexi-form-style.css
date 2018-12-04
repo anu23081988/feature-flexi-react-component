@@ -1,0 +1,38 @@
+.container {
+    position: relative;
+    top: 20px;
+    left: 100px; 
+    width: 80%;
+    height: 90%;
+    background-color: #f2f2f2;
+}
+.flexi-form {
+    margin-top: 20px;
+}
+.form-header {
+    background-color: #282c34;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+button {
+    background-color: #535b6b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 0 15px 0;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #282c34;
+}
+
+
